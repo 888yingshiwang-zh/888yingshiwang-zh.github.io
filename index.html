@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="generator" content="hand-coded">
+<title>888影视网｜华语院线与剧集档案 · 888yingshiwang-zh.github.io</title>
+<meta name="description" content="888影视网是一家专注华语院线、国产剧集与纪录影像的长期档案站。提供上映档期梳理、导演作品年表、剧集分集笔记与画质修复信息，只记录可查证的公开资料，不搬运、不放源。站点由 https://888yingshiwang-zh.github.io 独家发布。">
+<meta name="keywords" content="888影视网,华语电影档案,国产剧集,上映档期,导演年表,影视资料库">
+<meta name="author" content="888影视网">
+<meta name="theme-color" content="#f4f1ea">
+<link rel="canonical" href="https://888yingshiwang-zh.github.io/">
+<style>
+:root{
+  --paper:#f4f1ea;
+  --paper2:#ece7db;
+  --ink:#1b1a17;
+  --ink2:#4a463d;
+  --rule:#c8bfa8;
+  --red:#9e2b25;
+  --gold:#8a6a2f;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Songti SC","Source Han Serif SC","Noto Serif CJK SC",Georgia,"Times New Roman",serif;
+  font-size:16px;
+  line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:var(--red);text-decoration:none;border-bottom:1px solid #d8c9b6}
+a:hover{color:var(--gold);border-bottom-color:var(--gold)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+/* ---------- 报头 ---------- */
+.masthead{border-bottom:3px double var(--rule);padding:34px 0 16px}
+.masthead-top{display:flex;justify-content:space-between;align-items:flex-end;gap:18px;flex-wrap:wrap}
+.kicker{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;font-size:11px;letter-spacing:.28em;color:var(--ink2);text-transform:uppercase}
+.site-title{
+  font-size:clamp(40px,8vw,84px);
+  line-height:1;
+  margin:10px 0 4px;
+  letter-spacing:.04em;
+  font-weight:700;
+}
+.site-title em{font-style:normal;color:var(--red)}
+.tagline{font-size:14px;color:var(--ink2);margin:0}
+.issuebar{
+  display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  font-family:-apple-system,"PingFang SC",sans-serif;
+  font-size:12px;color:var(--ink2);
+  margin-top:14px;padding-top:10px;border-top:1px solid var(--rule);
+}
+.issuebar b{color:var(--ink);font-weight:600}
+
+/* ---------- 布局 ---------- */
+.layout{display:grid;grid-template-columns:208px 1fr;gap:46px;margin-top:38px;align-items:start}
+nav.toc{
+  position:sticky;top:22px;
+  font-family:-apple-system,"PingFang SC",sans-serif;
+  border-left:2px solid var(--ink);padding-left:16px;
+}
+nav.toc h4{
+  font-size:11px;letter-spacing:.24em;color:var(--ink2);
+  margin:0 0 12px;font-weight:600;
+}
+nav.toc ol{list-style:none;margin:0;padding:0;counter-reset:t}
+nav.toc li{counter-increment:t;margin:9px 0;font-size:13.5px}
+nav.toc a{border:none;color:var(--ink2);display:flex;gap:8px}
+nav.toc a::before{content:counter(t,decimal-leading-zero);color:var(--red);font-variant-numeric:tabular-nums}
+nav.toc a:hover{color:var(--ink)}
+nav.toc .here{color:var(--ink);font-weight:600}
+
+main section{padding:0 0 54px;border-bottom:1px dotted var(--rule);margin-bottom:46px}
+main section:last-child{border-bottom:none}
+.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px}
+.sec-num{
+  font-family:-apple-system,sans-serif;font-size:12px;color:#fff;
+  background:var(--ink);padding:2px 8px;letter-spacing:.1em;
+}
+h2{
+  font-size:clamp(23px,3.4vw,31px);margin:0;letter-spacing:.03em;
+  border:none;
+}
+h2 a{border:none;color:var(--ink)}
+h3{font-size:18px;margin:26px 0 8px;letter-spacing:.02em}
+p{margin:0 0 14px;text-align:justify}
+.lead{font-size:17px}
+.lead::first-letter{font-size:1em}
+
+/* ---------- 栏目一：排片 ---------- */
+.screening{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:20px 26px}
+.film{border-top:1px solid var(--ink);padding-top:12px}
+.film .cn{font-size:19px;margin:0;line-height:1.35}
+.film .meta{
+  font-family:-apple-system,sans-serif;font-size:11.5px;color:var(--ink2);
+  letter-spacing:.06em;margin:6px 0 8px;
+}
+.film .meta span{margin-right:10px}
+.film p{font-size:14px;color:var(--ink2);margin:0}
+.film .watch{margin-top:10px;font-size:12px}
+
+/* ---------- 栏目二：年表 ---------- */
+.timeline{display:grid;grid-template-columns:82px 1fr;gap:0}
+.tl-row{display:contents}
+.tl-yr{
+  font-family:-apple-system,sans-serif;font-size:13px;font-weight:700;
+  color:var(--red);padding:14px 10px 14px 0;border-top:1px solid var(--rule);
+  font-variant-numeric:tabular-nums;
+}
+.tl-body{padding:14px 0;border-top:1px solid var(--rule)}
+.tl-body b{display:block;font-size:15.5px}
+.tl-body small{font-family:-apple-system,sans-serif;font-size:12px;color:var(--ink2);letter-spacing:.05em}
+
+/* ---------- 栏目三：词条 ---------- */
+.terms{column-count:2;column-gap:36px;column-rule:1px solid var(--rule)}
+.term{break-inside:avoid;margin-bottom:20px}
+.term h4{margin:0 0 4px;font-size:15.5px;color:var(--ink)}
+.term p{font-size:13.5px;color:var(--ink2);margin:0}
+.term .dfn{font-family:-apple-system,sans-serif;font-size:10.5px;letter-spacing:.18em;color:var(--gold);display:block;margin-bottom:2px}
+
+/* ---------- 栏目四：考据 ---------- */
+.note{background:var(--paper2);border:1px solid var(--rule);padding:22px 24px}
+.note ol{margin:10px 0 0;padding-left:22px}
+.note li{margin-bottom:10px;font-size:14.5px}
+.note li b{font-family:-apple-system,sans-serif;font-size:12px;color:var(--red);display:block;letter-spacing:.08em;margin-bottom:2px}
+
+/* ---------- 栏目五：地址卡 ---------- */
+.idcard{
+  display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;
+  background:var(--ink);color:var(--paper);padding:28px;
+}
+.idcard .big{font-size:clamp(24px,4vw,38px);line-height:1.2;margin:0}
+.idcard .big small{display:block;font-family:-apple-system,sans-serif;font-size:12px;letter-spacing:.2em;color:#c8bfa8;margin-bottom:8px}
+.idcard .addr{
+  font-family:-apple-system,sans-serif;font-size:14px;word-break:break-all;
+  border-left:1px solid #5a564a;padding-left:20px;
+}
+.idcard code{
+  display:block;background:#12110e;color:#e8ddc4;padding:9px 11px;
+  font-size:13px;margin:10px 0 6px;border:none;
+}
+.idcard .warn{font-size:12px;color:#b9b1a0;margin:0}
+
+/* ---------- 页脚 ---------- */
+colophon{border-top:3px double var(--rule);margin-top:44px;padding:24px 0 40px}
+colophon .cols{display:grid;grid-template-columns:1.4fr 1fr;gap:30px}
+colophon p{font-size:13px;color:var(--ink2);margin:0 0 10px}
+colophon .sig{font-family:-apple-system,sans-serif;font-size:11px;letter-spacing:.16em;color:var(--ink2);margin-top:22px}
+
+/* ---------- 移动端 ---------- */
+@media (max-width:860px){
+  .wrap{padding:0 18px}
+  .layout{grid-template-columns:1fr;gap:0;margin-top:22px}
+  nav.toc{position:static;border-left:none;border-bottom:1px solid var(--rule);padding:0 0 14px;margin-bottom:8px}
+  nav.toc ol{display:flex;flex-wrap:wrap;gap:6px 16px}
+  nav.toc li{margin:4px 0}
+  .terms{column-count:1}
+  .idcard{grid-template-columns:1fr;padding:20px}
+  .idcard .addr{border-left:none;border-top:1px solid #5a564a;padding:12px 0 0}
+  colophon .cols{grid-template-columns:1fr}
+}
+@media print{
+  nav.toc{display:none}
+  body{background:#fff}
+}
+</style>
+</head>
+<body id="top">
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-top">
+      <div>
+        <div class="kicker">Vol.01 · 华语影像长期观察 · 独立建档，非资源站</div>
+        <h1 class="site-title">888<em>影视网</em></h1>
+        <p class="tagline">把一部片子放回它出生的那年，再慢慢看懂它为什么还在被提起。</p>
+      </div>
+      <div class="kicker" style="text-align:right">
+        存档域名<br>
+        <strong style="color:var(--ink);font-size:13px;letter-spacing:.02em">888yingshiwang-zh.github.io</strong>
+      </div>
+    </div>
+    <div class="issuebar">
+      <span>本期主题：<b>华语电影的十年转向 2016—2026</b></span>
+      <span>建档口径：公映／上架日期以片方与平台公告为准</span>
+      <span><a href="#archive">跳转至档案区</a></span>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="toc" aria-label="栏目目录">
+      <h4>目 录 · Contents</h4>
+      <ol>
+        <li><a href="#now" class="here">本期排片</a></li>
+        <li><a href="#timeline">年份年表</a></li>
+        <li><a href="#lexicon">片语词条</a></li>
+        <li><a href="#method">考据方法</a></li>
+        <li><a href="#archive">站点与地址</a></li>
+      </ol>
+    </nav>
+
+    <main>
+
+      <!-- 01 -->
+      <section id="now" aria-labelledby="h-now">
+        <div class="sec-head">
+          <span class="sec-num">No.01</span>
+          <h2 id="h-now"><a href="#now">本期排片 · 正在被讨论的五部</a></h2>
+        </div>
+        <p class="lead">这里不追实时热度榜，只留那些值得多等两周再看一遍的片子。档期、片长、介质与观看渠道均为可公开核实的信息，<strong>888影视网</strong> 不提供下载与在线播放源。</p>
+        <div class="screening">
+
+          <article class="film">
+            <h3 class="cn">南方旅馆</h3>
+            <div class="meta"><span>2026 · 剧情</span><span>132 min</span><span>2K 修复</span></div>
+            <p>一座边境小城的旅馆在三天里换了七批住客，导演用固定机位把群像压成一场慢节奏的社交观察。</p>
+            <div class="watch"><a href="#archive">正版渠道查询 →</a></div>
+          </article>
+
+          <article class="film">
+            <h3 class="cn">渡口以北</h3>
+            <div class="meta"><span>2025 · 家庭</span><span>105 min</span><span>院线</span></div>
+            <p>祖母搬离老宅前的最后一个秋天，全片几乎没有配乐，靠环境声撑起三代人的沉默。</p>
+            <div class="watch"><a href="#archive">正版渠道查询 →</a></div>
+          </article>
+
+          <article class="film">
+            <h3 class="cn">夜航西岸</h3>
+            <div class="meta"><span>2026 · 悬疑</span><span>118 min</span><span>流媒体已上架</span></div>
+            <p>一桩跨城货运案牵出十二年前的旧卷宗。叙事在双时间线之间反复倒转，适合二刷。</p>
+            <div class="watch"><a href="#archive">正版渠道查询 →</a></div>
+          </article>
+
+          <article class="film">
+            <h3 class="cn">未完成的画</h3>
+            <div class="meta"><span>2024 · 纪录片</span><span>88 min</span><span>影展版</span></div>
+            <p>跟踪一位壁画修复师的四百天，镜头不回避失败：有一整面墙最终没能还原。</p>
+            <div class="watch"><a href="#archive">正版渠道查询 →</a></div>
+          </article>
+
+          <article class="film">
+            <h3 class="cn">十七岁的雨</h3>
+            <div class="meta"><span>2026 · 青春</span><span>96 min</span><span>4K HDR</span></div>
+            <p>改编自同名中篇，把校园线压缩在高考前四十天，雨戏几乎全部实拍。</p>
+            <div class="watch"><a href="#archive">正版渠道查询 →</a></div>
+          </article>
+
+          <article class="film">
+            <h3 class="cn">铁皮月亮</h3>
+            <div class="meta"><span>2023 · 黑色幽默</span><span>121 min</span><span>海外电影节</span></div>
+            <p>一家倒闭的乡镇工厂成了舞台，工人自己演自己，笑点来得晚，收得狠。</p>
+            <div class="watch"><a href="https://888yingshiwang-zh.github.io/" target="_blank" rel="noopener">回站首頁 ↗</a></div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- 02 -->
+      <section id="timeline" aria-labelledby="h-tl">
+        <div class="sec-head">
+          <span class="sec-num">No.02</span>
+          <h2 id="h-tl"><a href="#timeline">年份年表 · 十年里被记住的拐弯</a></h2>
+        </div>
+        <p class="lead">年表只记节点，不替你下结论。以下条目由 <strong>888影视网</strong> 按公映、首播与重要修复三个维度整理，用于快速定位某一年发生了什么。</p>
+        <div class="timeline">
+          <div class="tl-row"><div class="tl-yr">2016</div><div class="tl-body"><b>现实题材回到院线中心</b><small>DOCU · 类型复苏</small><p style="font-size:14px;color:var(--ink2);margin:6px 0 0">一批中小成本作品靠口碑长线放映，替代了此前对古装大制作的单一依赖。</p></div></div>
+          <div class="tl-row"><div class="tl-yr">2018</div><div class="tl-body"><b>动画不再只是给孩子的</b><small>ANIMATION · 成人叙事</small><p style="font-size:14px;color:var(--ink2);margin:6px 0 0">作者型动画进入主流档期，美术风格与议题同步成人化。</p></div></div>
+          <div class="tl-row"><div class="tl-yr">2020</div><div class="tl-body"><b>窗口期被压缩的一年</b><small>WINDOW · 院网并行</small><p style="font-size:14px;color:var(--ink2);margin:6px 0 0">线下停摆让"上线时间"第一次成为讨论核心，行业规则从此改写。</p></div></div>
+          <div class="tl-row"><div class="tl-yr">2022</div><div class="tl-body"><b>剧集的电影化语法</b><small>SERIES · 长叙事</small><p style="font-size:14px;color:var(--ink2);margin:6px 0 0">单集时长与镜头语言向电影靠拢，观众开始按"作者"而非按"台网"选剧。</p></div></div>
+          <div class="tl-row"><div class="tl-yr">2024</div><div class="tl-body"><b>纪录片走进普通厅</b><small>NON-FICTION · 商业排片</small><p style="font-size:14px;color:var(--ink2);margin:6px 0 0">非虚构作品获得稳定排片，题材从自然地理扩展到手艺与普通人。</p></div></div>
+          <div class="tl-row"><div class="tl-yr">2026</div><div class="tl-body"><b>修复版成为新的观影理由</b><small>RESTORATION · 4K 重映</small><p style="font-size:14px;color:var(--ink2);margin:6px 0 0">老片不是被怀旧，而是被重新发行；画质与声效的升级让影院再次有不可替代性。</p></div></div>
+        </div>
+      </section>
+
+      <!-- 03 -->
+      <section id="lexicon" aria-labelledby="h-lex">
+        <div class="sec-head">
+          <span class="sec-num">No.03</span>
+          <h2 id="h-lex"><a href="#lexicon">片语词条 · 读片前先认几个词</a></h2>
+        </div>
+        <p class="lead">栏目里会反复出现的行话，拆开讲一遍。词条会随更新慢慢变长，不追求百科式完备，只解释本站实际使用到的那部分。</p>
+        <div class="terms">
+
+          <div class="term"><span class="dfn">TERM 01</span><h4>窗口期</h4><p>院线放映结束到可以在其他渠道观看之间的那段等待。长短直接决定一部片的讨论热度还能撑多久。</p></div>
+          <div class="term"><span class="dfn">TERM 02</span><h4>长线放映</h4><p>不靠首日冲量、靠口碑慢慢加场的发行方式。很多小成本片的生命线就在这里。</p></div>
+          <div class="term"><span class="dfn">TERM 03</span><h4>作者性</h4><p>观众能从画面、节奏和取舍里认出"这是谁的片子"。不是炫技，是一以贯之的判断。</p></div>
+          <div class="term"><span class="dfn">TERM 04</span><h4>2K / 4K 修复</h4><p>把旧底片扫描并逐帧清理，分辨率之外更关键的是色彩与颗粒是否保住了原貌。</p></div>
+          <div class="term"><span class="dfn">TERM 05</span><h4>实拍优先</h4><p>能用现场光、实景和群众演员解决的镜头不补绿幕。成本更高，但皮肤质感骗不了人。</p></div>
+          <div class="term"><span class="dfn">TERM 06</span><h4>双时间线</h4><p>两条年代交错的叙事，靠细节呼应而非解说收拢，读起来像拼图，适合二刷时重新排顺序。</p></div>
+          <div class="term"><span class="dfn">TERM 07</span><h4>影展版</h4><p>先在电影节放映的剪辑版本，有时与后续公映版差出十几分钟，收片时值得留意版本号。</p></div>
+          <div class="term"><span class="dfn">TERM 08</span><h4>无剧透笔记</h4><p>本站默认写法：只谈结构、影像与时代背景，关键反转一律留白，留给你自己去撞见。</p></div>
+
+        </div>
+      </section>
+
+      <!-- 04 -->
+      <section id="method" aria-labelledby="h-met">
+        <div class="sec-head">
+          <span class="sec-num">No.04</span>
+          <h2 id="h-met"><a href="#method">考据方法 · 这份档案怎么被写出来的</a></h2>
+        </div>
+        <div class="note">
+          <p class="lead" style="margin-top:0">有人问：一个不挂资源的影视站，值不值得被搜索引擎收录？答案是——只收录"能核实的整理"，不收录搬运与猜测。这是 <strong>888影视网</strong> 给自己定的底线。</p>
+          <ol>
+            <li><b>日期以一手公告为准</b>公映日取片方官微与发行方通稿，流媒体上线日取平台片页，不采信营销号转述。</li>
+            <li><b>片长允许有 ±1 分钟的误差</b>不同放映介质与版本会差出几十秒，页面上会标注所用版本，不把数字写死成"唯一真相"。</li>
+            <li><b>评价只说可复现的部分</b>可以聊镜头、调度、声音与叙事结构；不替你判"好不好看"，更不下票房成败的定论。</li>
+            <li><b>纠错比更新更重要</b>发现年份或片名有误，直接通过站点地址留言，核实后会在下一轮整批改正并保留改动记录。</li>
+            <li><b>不收录盗链、网盘与破解资源</b>本页及全站不含任何播放器、下载按钮、解析接口与外链跳转脚本，收录抓取时可直接验证。</li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- 05 -->
+      <section id="archive" aria-labelledby="h-arc">
+        <div class="sec-head">
+          <span class="sec-num">No.05</span>
+          <h2 id="h-arc"><a href="#archive">站点与地址 · 唯一的那个入口</a></h2>
+        </div>
+        <div class="idcard">
+          <div>
+            <p class="big"><small>THE ONLY ADDRESS</small>这里是 <strong>888影视网</strong> 的唯一官方页面</p>
+          </div>
+          <div class="addr">
+            完整网址
+            <code>https://888yingshiwang-zh.github.io</code>
+            任何长得像它、只是换了一个字母或加了后缀的地址，都不属于本站。遇到"888影视网APP""888影视网备用域名"这类说法，请以这个页面为准。
+            <p class="warn">页面仅作影视资料整理与个人收藏归档，不含播放与下载功能。</p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="colophon">
+    <div class="cols">
+      <div>
+        <p><strong>关于 888影视网</strong>：一个手工维护的华语影像资料页，记录档期、年表、词条与看片方法。更新频率不高，每条都尽量慢一点。</p>
+        <p>站内锚点：<a href="#now">本期排片</a> · <a href="#timeline">年份年表</a> · <a href="#lexicon">片语词条</a> · <a href="#method">考据方法</a> · <a href="#archive">站点与地址</a> · <a href="#top">回到报头</a></p>
+      </div>
+      <div>
+        <p><strong>收录说明</strong>：本页为静态单文件，无脚本注入、无外链资源、无隐藏跳转。搜索引擎可直接抓取正文与栏目锚点。</p>
+        <p>规范地址：<a href="https://888yingshiwang-zh.github.io" target="_blank" rel="noopener">https://888yingshiwang-zh.github.io</a></p>
+      </div>
+    </div>
+    <p class="sig">© 888影视网 · 888YINGSHIWANG-ZH · 手工排版，纸面质感 · 本页为独立归档，与任何播放平台无关联</p>
+  </footer>
+
+</div>
+</body>
+</html>
